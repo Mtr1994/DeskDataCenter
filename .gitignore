@@ -27,7 +27,7 @@ ui_*.h
 *.qmlc
 *.jsc
 Makefile*
-*build-*
+build-*
 
 # Qt unit tests
 target_wrapper.*
@@ -41,3 +41,6 @@ target_wrapper.*
 
 # QtCreator CMake
 CMakeLists.txt.user*
+
+google/
+config/
