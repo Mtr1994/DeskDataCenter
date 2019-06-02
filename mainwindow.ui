@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="qrc.qrc">
-    <normaloff>:/icon/logoS.png</normaloff>:/icon/logoS.png</iconset>
-  </property>
   <property name="styleSheet">
    <string notr="true"/>
   </property>
@@ -188,7 +184,7 @@ image: url(:/icon/user2.png);</string>
         </spacer>
        </item>
        <item row="3" column="0">
-        <widget class="QPushButton" name="btnHHome">
+        <widget class="QPushButton" name="btnHome">
          <property name="minimumSize">
           <size>
            <width>0</width>

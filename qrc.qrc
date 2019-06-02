@@ -7,5 +7,6 @@
         <file>icon/notask.png</file>
         <file>icon/user1.png</file>
         <file>icon/user2.png</file>
+        <file>qss/style.qss</file>
     </qresource>
 </RCC>

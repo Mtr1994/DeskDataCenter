@@ -30,21 +30,20 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void init();
 
 private slots:
     void on_btnLog_clicked();
 
     void on_btnExit_clicked() __attribute__ ((noreturn));
 
-    void on_btnHHome_clicked();
-
     void on_tableUser_clicked(const QModelIndex &index);
+
+    void on_btnHome_clicked();
 
 private:
     void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
-
-    void decorateUi();
 
     // 提示
     void showToast(const QString& pMsg);

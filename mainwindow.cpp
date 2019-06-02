@@ -9,19 +9,28 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->tabWidget->tabBar()->hide();
-    ui->tabWidget->setCurrentIndex(PAGE_HOME);
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::Window);
-    this->resize(qRound(GetSystemMetrics(SM_CXSCREEN) * 0.6), qRound(GetSystemMetrics(SM_CYSCREEN) * 0.7));
-    decorateUi();
+    init();
     initModel();
-    ui->tableUser->setModel(&mModelUsers);
     initTable();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::init()
+{
+    ui->tabWidget->tabBar()->hide();
+    ui->tabWidget->setCurrentIndex(PAGE_HOME);
+    this->setWindowFlags(Qt::FramelessWindowHint | Qt::Window);
+    this->resize(qRound(GetSystemMetrics(SM_CXSCREEN) * 0.6), qRound(GetSystemMetrics(SM_CYSCREEN) * 0.7));
+
+    // 状态栏样式
+    QWidget *widget1 = new QWidget(ui->statusBar);
+    widget1->setFixedWidth(145);
+    widget1->setFixedHeight(12);
+    widget1->setStyleSheet("background-color: #273d55");
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
@@ -51,14 +60,6 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
     last_mouse_position_ = event->globalPos();
 }
 
-void MainWindow::decorateUi()
-{
-    QWidget *widget1 = new QWidget(ui->statusBar);
-    widget1->setFixedWidth(145);
-    widget1->setFixedHeight(12);
-    widget1->setStyleSheet("background-color: #273d55");
-}
-
 void MainWindow::showToast(const QString &pMsg)
 {
     DialogToast *aToast = new DialogToast(ui->tabWidget);
@@ -74,6 +75,7 @@ void MainWindow::initModel()
     mModelUsers.setHorizontalHeaderItem(4, new QStandardItem("操作"));
 
     ui->tableUser->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    ui->tableUser->setModel(&mModelUsers);
 }
 
 void MainWindow::initTable()
@@ -108,11 +110,6 @@ void MainWindow::on_btnLog_clicked()
     ui->editLog->clearFocus();
 }
 
-void MainWindow::on_btnHHome_clicked()
-{
-    ui->tabWidget->setCurrentIndex(PAGE_HOME);
-}
-
 void MainWindow::on_tableUser_clicked(const QModelIndex &index)
 {
     if (index.column() == 4)
@@ -122,4 +119,9 @@ void MainWindow::on_tableUser_clicked(const QModelIndex &index)
     else {
         qDebug() << "ignore";
     }
+}
+
+void MainWindow::on_btnHome_clicked()
+{
+    ui->tabWidget->setCurrentIndex(PAGE_HOME);
 }

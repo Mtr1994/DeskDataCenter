@@ -1,0 +1,66 @@
+﻿QWidget#widgetSql,#widgetPlan {
+    border: 1px solid #d8d8d8;
+    border-radius: 6px;
+}
+
+QWidget#widgetContent {
+    background-color: #fefefe;
+    border-radius: 6px;
+}
+
+QTabWidget::pane {
+    border: none;
+}
+
+QTableView {
+    border-radius: 2ex;
+}
+
+
+QPushButton[btnMenu="true"]
+{
+    color: rgb(254, 254, 254);
+    background-color: #007c8784;
+    border-radius: 2px;
+}
+
+QPushButton[btnMenu="true"]:hover {
+    background-color: #2c425a;
+    border-radius: 1px;
+}
+
+
+QStatusBar {
+    background: transparent;
+    min-height: 12px;
+}
+
+QTableView::Item
+{
+    border: 0px solid transparent;
+    border-bottom: 1px solid #d8d8d8;
+    padding-left: 12px;
+}
+
+QTableView {
+    color: #333333;
+    gridline-color: #888888;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 6px;
+}
+
+QHeaderView {
+    color: white;
+    font: 11pt;
+    background-color: #fefefe;
+    border-radius: 0px;
+}
+
+QHeaderView::section {
+    color: #333333;
+    background-color: #fefefe;
+    border-radius:0px;
+    border-bottom: 1px solid #d8d8d8;
+    padding-left: 16px;
+}
