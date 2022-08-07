@@ -8,6 +8,8 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+lessThan(QT_MAJOR_VERSION, 6): win32: QMAKE_CXXFLAGS += -execution-charset:utf-8
+
 TARGET = PeopleCache
 TEMPLATE = app
 
@@ -24,7 +26,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 
-DESTDIR += ..\
+DESTDIR += ..\output
 
 SOURCES += \
         main.cpp \
@@ -43,7 +45,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES += \
-    qrc.qrc
+RC_ICONS = icon.ico
 
-RC_ICONS = favicon.ico
+RESOURCES += \
+    Resource.qrc

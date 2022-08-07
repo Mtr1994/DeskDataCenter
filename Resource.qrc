@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resource/qss/style.qss</file>
+        <file>Resource/icon/correct.png</file>
+        <file>Resource/icon/down.png</file>
+        <file>Resource/icon/error.png</file>
+        <file>Resource/icon/logoS.png</file>
+        <file>Resource/icon/notask.png</file>
+        <file>Resource/icon/user1.png</file>
+        <file>Resource/icon/user2.png</file>
+    </qresource>
+</RCC>

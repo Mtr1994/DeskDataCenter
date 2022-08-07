@@ -1,6 +1,5 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "qt_windows.h"
 
 #include <QDebug>
 
@@ -23,8 +22,7 @@ void MainWindow::init()
 {
     ui->tabWidget->tabBar()->hide();
     ui->tabWidget->setCurrentIndex(PAGE_HOME);
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::Window);
-    this->resize(qRound(GetSystemMetrics(SM_CXSCREEN) * 0.6), qRound(GetSystemMetrics(SM_CYSCREEN) * 0.7));
+    setWindowFlags(Qt::FramelessWindowHint | Qt::Window);
 
     // 状态栏样式
     QWidget *widget1 = new QWidget(ui->statusBar);
